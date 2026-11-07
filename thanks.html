@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're on the Radar! — Money Radar</title>
+<meta name="description" content="Welcome to Money Radar. Your first match report is on its way.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="logo" href="index.html"><span class="radar-ico"></span>Money&nbsp;Radar</a>
+  <nav class="nav-links">
+    <a href="settlements.html">Open settlements</a>
+    <a href="quiz.html">Check my matches</a>
+    <a class="btn small" href="index.html">Home</a>
+  </nav>
+</div></header>
+
+<section><div class="wrap">
+  <div class="quiz-box center">
+    <div style="font-size:3rem">🎉📡</div>
+    <h2 style="margin-top:10px">You're on the Radar!</h2>
+    <p style="color:var(--muted);max-width:520px;margin:0 auto 22px">Signup confirmed. Your Radar is already warming up — here's your setup progress:</p>
+    <div class="progress-shell" style="max-width:420px;margin:0 auto"><div class="progress-fill" id="thanks-fill" style="width:8%"></div></div>
+    <p class="fineprint" style="margin-top:8px" id="thanks-fill-label">Radar setup: 40% complete</p>
+    <div class="match-list" style="text-align:left;margin-top:26px">
+      <div class="match-item"><div><b>✅ Step 1 — You're in</b><span>Your free weekly settlement email starts with the next scan.</span></div></div>
+      <div class="match-item"><div><b>🎯 Step 2 — Sharpen your matches (2 minutes)</b><span>Take the 12-question eligibility check so we only send settlements that are plausibly yours.</span></div><a class="btn small" href="quiz.html">Start →</a></div>
+      <div class="match-item"><div><b>💸 Step 3 — File what's already open</b><span>Eight settlements are open right now. The soonest deadline is November 16 — check the directory today.</span></div><a class="btn small ghost" href="settlements.html">View →</a></div>
+    </div>
+    <div class="card" style="margin-top:22px;text-align:left">
+      <h3>Know someone who never checks this stuff? (Almost everyone.)</h3>
+      <p style="margin-bottom:12px">Send them their own Radar. When a friend you refer becomes a paying Pro member, you both get a bonus month of Pro — on us.</p>
+      <button class="btn gold small" id="copy-share">Copy my invite message</button>
+      <p class="fineprint" id="copy-status" style="margin-top:8px"></p>
+    </div>
+  </div>
+</div></section>
+
+<footer class="site"><div class="wrap cols">
+  <div>© 2026 Money Radar · MS ECOM LLC<br>Not a law firm. Not affiliated with any court, government agency, or settlement administrator.</div>
+  <div><a href="index.html">Home</a> · <a href="settlements.html">Open settlements</a> · <a href="legal.html">Terms &amp; privacy</a></div>
+</div></footer>
+<script src="app.js"></script>
+<script>
+  window.addEventListener('load', function(){
+    setTimeout(function(){ window.fireConfetti({count: 200}); }, 250);
+    var fill = document.getElementById('thanks-fill');
+    setTimeout(function(){ fill.style.width = '40%'; }, 400);
+  });
+  document.getElementById('copy-share').addEventListener('click', function(){
+    var msg = "I just joined Money Radar — it matches you against class-action settlements companies owe you money from and warns you before the deadlines. There are 8 open right now ($589M+ in funds). The check takes 60 seconds and it's free: " + window.location.origin + window.location.pathname.replace('thanks.html','quiz.html');
+    var status = document.getElementById('copy-status');
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(msg).then(function(){ status.textContent = "Copied! Paste it anywhere to invite a friend."; try{ window.fireConfetti({count:80}); }catch(e){} });
+    } else {
+      status.textContent = msg;
+    }
+  });
+</script>
+</body>
+</html>

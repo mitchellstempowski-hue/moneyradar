@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check My Matches — 12-Question Eligibility Check | Money Radar</title>
+<meta name="description" content="Answer 12 quick questions and Money Radar matches you against every open settlement we track. Free, about 60 seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="logo" href="index.html"><span class="radar-ico"></span>Money&nbsp;Radar</a>
+  <nav class="nav-links">
+    <a href="settlements.html">Open settlements</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a class="btn small" href="index.html#join">Join free</a>
+  </nav>
+</div></header>
+
+<section style="padding-top:44px">
+  <div class="wrap">
+    <div class="quiz-box" id="quiz-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <span class="badge proof" id="step-label">Question 1 of 12</span>
+        <span class="badge days" id="match-label">Radar warming up…</span>
+      </div>
+      <div style="height:12px"></div>
+      <div class="progress-shell"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="quiz-q" id="quiz-q"></div>
+      <p class="quiz-sub" id="quiz-sub"></p>
+      <div class="quiz-opts" id="quiz-opts"></div>
+      <p class="fineprint" style="margin-top:18px">Your answers stay in your browser until you choose to save them with a free account. Nothing here is legal advice, and a match is a strong lead — not a guarantee. Eligibility is decided by the settlement administrator.</p>
+    </div>
+
+    <div class="quiz-box" id="result-box" style="display:none">
+      <p class="center" style="color:var(--muted);font-weight:700;letter-spacing:.5px">YOUR RADAR FOUND</p>
+      <div class="big-num" id="match-count">0</div>
+      <p class="center" style="color:var(--muted)">potential settlement matches</p>
+      <div class="match-list" id="match-list"></div>
+      <div id="no-match" style="display:none">
+        <p class="center" style="color:var(--muted)">No direct matches in today's list — which is exactly why the Radar matters. New settlements open every week, and your profile is now on watch. Join free and we'll email you the moment a settlement matches you.</p>
+      </div>
+      <form class="grid" id="quiz-signup" action="https://api.web3forms.com/submit" method="POST" style="margin-top:22px">
+        <input type="hidden" name="access_key" value="0df91239-bbf8-4d91-a840-ad835f7f3ab9">
+        <input type="hidden" name="subject" value="Money Radar — Quiz signup with matches">
+        <input type="hidden" name="redirect" value="https://mitchellstempowski-hue.github.io/moneyradar/thanks.html">
+        <input type="hidden" name="quiz_matches" id="quiz-matches-field" value="">
+        <input type="hidden" name="quiz_answers" id="quiz-answers-field" value="">
+        <label>Where should we send your matches and deadline alerts?
+          <input type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+        </label>
+        <button class="btn" type="submit">Save my matches — join free 🎉</button>
+        <p class="fineprint center">Free weekly settlement email. No spam, no card, unsubscribe anytime. Deadline alerts at 14, 7, and 2 days are a Pro feature.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap cols">
+  <div>© 2026 Money Radar · MS ECOM LLC<br>Not a law firm. Not affiliated with any court, government agency, or settlement administrator.</div>
+  <div><a href="index.html">Home</a> · <a href="settlements.html">Open settlements</a> · <a href="legal.html">Terms &amp; privacy</a></div>
+</div></footer>
+
+<script src="app.js"></script>
+<script>
+(function(){
+  var SETTLEMENTS = {
+    cvs:      {name:"CVS Website & App Privacy", fund:"$20.5M fund", deadline:"2026-11-16", dl:"Nov 16, 2026", url:"https://cvsdigitalprivacysettlement.com/"},
+    lsc:      {name:"Planned Parenthood Lab (LSC) Data Breach", fund:"$6.1M fund", deadline:"2026-11-24", dl:"Nov 24, 2026", url:"https://lscdatasettlement.com/"},
+    skin360:  {name:"Neutrogena Skin360 (Illinois)", fund:"$4.7M fund", deadline:"2026-11-25", dl:"Nov 25, 2026", url:"https://skin360bipasettlement.com/"},
+    squatch:  {name:"Dr. Squatch “Natural” Products", fund:"$9M fund", deadline:"2026-11-27", dl:"Nov 27, 2026", url:"https://personalcareproductssettlement.com/"},
+    apple:    {name:"Apple Siri / Apple Intelligence", fund:"$250M fund", deadline:"2026-12-21", dl:"Dec 21, 2026", url:"https://www.smartphoneaisettlement.com/"},
+    equifax:  {name:"Equifax Credit Score (FCRA)", fund:"$100M fund", deadline:"2026-12-28", dl:"Dec 28, 2026", url:"https://equifaxfaircreditreportingsettlement.com/"},
+    goodrx:   {name:"GoodRx Privacy", fund:"$32M fund", deadline:"2026-12-29", dl:"Dec 29, 2026", url:"https://www.goodrxprivacysettlement.com/"},
+    atm:      {name:"Visa & Mastercard Non-Bank ATM Fees", fund:"$167.5M fund", deadline:"2027-02-10", dl:"Feb 10, 2027", url:"https://www.nonbankatmsurchargesettlement.com/"}
+  };
+  var QUESTIONS = [
+    {q:"Have you used the CVS website or app (cvs.com / CVS app) at any point before July 2026?", sub:"Even just checking a prescription price or a store coupon counts.", match:"cvs"},
+    {q:"Did you use GoodRx — the website, app, or a GoodRx coupon — before April 2024?", sub:"GoodRx shared user health information with advertisers, according to the lawsuit.", match:"goodrx"},
+    {q:"Have you bought Dr. Squatch soap or other products labeled “natural” since 2018?", sub:"Bar soap, deodorant, shampoo — any Dr. Squatch product with “natural” on the label.", match:"squatch"},
+    {q:"Did you buy an iPhone 15 Pro, 15 Pro Max, or any iPhone 16 model between June 2024 and March 2025?", sub:"The case is about Siri / Apple Intelligence features advertised but not delivered on time.", match:"apple"},
+    {q:"Have you ever paid a fee (surcharge) to withdraw cash from an ATM that wasn't your bank's — at a gas station, bar, or convenience store?", sub:"Any time since 2007 counts. Almost everyone has done this at least once.", match:"atm"},
+    {q:"Have you had a lab test ordered by a Planned Parenthood health center, or received a data-breach notice from Laboratory Services Cooperative (LSC)?", sub:"The incident came to light around October 2024.", match:"lsc"},
+    {q:"While in Illinois between 2019 and 2023, did you use the Neutrogena or NeoStrata Skin360 skin-scanning app or website?", sub:"Illinois' biometric privacy law is the basis of this one.", match:"skin360", stateGate:"IL"},
+    {q:"Have you received a notice from Equifax about a credit score error, or believe your Equifax score was misreported to a lender?", sub:"Membership in this class comes from Equifax's own records.", match:"equifax"},
+    {q:"Which state do you live in?", sub:"Some settlements are state-specific. This helps us filter your matches.", state:true},
+    {q:"Do you enter sweepstakes or giveaways online?", sub:"Pro members get a sweepstakes deadline tracker bundled in — never miss a closing date.", bundle:"sweeps"},
+    {q:"Do you want alerts when a product you own is recalled for a refund?", sub:"Refunds were the remedy in over half of recent CPSC recalls — most people never claim them.", bundle:"recalls"},
+    {q:"Last one: how do you want to hear about a deadline that's about to cost you money?", sub:"Free members get the weekly email. Pro adds 14 / 7 / 2-day alerts so a deadline never slips past.", final:true}
+  ];
+  var STATES = ["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY","DC"];
+  var idx = 0, matches = {}, answers = {}, userState = "";
+  var qEl = document.getElementById('quiz-q'), subEl = document.getElementById('quiz-sub'),
+      optsEl = document.getElementById('quiz-opts'), stepEl = document.getElementById('step-label'),
+      fillEl = document.getElementById('progress-fill'), matchEl = document.getElementById('match-label');
+
+  function matchCount(){ return Object.keys(matches).length; }
+  function render(){
+    var item = QUESTIONS[idx];
+    stepEl.textContent = "Question " + (idx+1) + " of 12";
+    // Endowed progress: the bar starts at 8% and the first answer lands ~16%
+    fillEl.style.width = Math.round(8 + (idx/QUESTIONS.length)*84) + "%";
+    var mc = matchCount();
+    matchEl.textContent = mc === 0 ? "Radar scanning…" : ("🎯 " + mc + (mc===1 ? " match" : " matches") + " so far");
+    qEl.textContent = item.q; subEl.textContent = item.sub || "";
+    optsEl.innerHTML = "";
+    if(item.state){
+      var sel = document.createElement('select');
+      sel.innerHTML = '<option value="">Choose your state…</option>' + STATES.map(function(s){ return '<option value="'+s+'">'+s+'</option>'; }).join('');
+      sel.style.marginBottom = "12px";
+      var btn = document.createElement('button');
+      btn.className = "quiz-opt"; btn.textContent = "Continue →"; btn.style.textAlign = "center";
+      btn.addEventListener('click', function(){ userState = sel.value; answers.state = sel.value; next(); });
+      optsEl.appendChild(sel); optsEl.appendChild(btn);
+      return;
+    }
+    if(item.final){
+      ["Email is enough","Email + extra reminders (Pro)","Just the weekly roundup"].forEach(function(label){
+        var b = document.createElement('button');
+        b.className = "quiz-opt"; b.textContent = label;
+        b.addEventListener('click', function(){ answers.alert_pref = label; finish(); });
+        optsEl.appendChild(b);
+      });
+      return;
+    }
+    [["yes","Yes"],["notsure","Not sure"],["no","No"]].forEach(function(pair){
+      var b = document.createElement('button');
+      b.className = "quiz-opt"; b.textContent = pair[0]==="yes" ? "Yes" : (pair[0]==="notsure" ? "Not sure" : "No");
+      b.addEventListener('click', function(){
+        answers["q"+(idx+1)] = pair[0];
+        if(item.match && (pair[0]==="yes" || pair[0]==="notsure")){
+          if(!(item.stateGate && userState && userState !== item.stateGate)){
+            if(pair[0]==="yes") matches[item.match] = SETTLEMENTS[item.match];
+            else matches[item.match] = SETTLEMENTS[item.match]; // "not sure" still flags it as a possible match to check
+          }
+        }
+        next();
+      });
+      optsEl.appendChild(b);
+    });
+  }
+  function next(){ idx++; if(idx < QUESTIONS.length) render(); else finish(); }
+  function finish(){
+    fillEl.style.width = "100%";
+    document.getElementById('quiz-box').style.display = "none";
+    var box = document.getElementById('result-box'); box.style.display = "block";
+    var keys = Object.keys(matches);
+    var countEl = document.getElementById('match-count');
+    // Animated count-up + confetti celebration
+    var n = 0; var target = keys.length;
+    var iv = setInterval(function(){ n++; countEl.textContent = n; if(n >= target) clearInterval(iv); }, target ? 220 : 0);
+    if(target === 0) countEl.textContent = "0";
+    var list = document.getElementById('match-list'); list.innerHTML = "";
+    keys.forEach(function(k){
+      var s = matches[k];
+      var div = document.createElement('div'); div.className = "match-item";
+      div.innerHTML = "<div><b>"+s.name+"</b><span>"+s.fund+" · Deadline "+s.dl+"</span></div><a class='btn small ghost' target='_blank' rel='noopener' href='"+s.url+"'>Official site →</a>";
+      list.appendChild(div);
+    });
+    if(target === 0) document.getElementById('no-match').style.display = "block";
+    document.getElementById('quiz-matches-field').value = keys.map(function(k){ return matches[k].name; }).join("; ");
+    document.getElementById('quiz-answers-field').value = JSON.stringify(answers);
+    try{ localStorage.setItem('moneyradar_profile', JSON.stringify({answers:answers, matches:keys, state:userState, ts:Date.now()})); }catch(e){}
+    window.fireConfetti({count: target ? 200 : 90});
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  document.getElementById('quiz-signup').addEventListener('submit', function(){ try{ window.fireConfetti({count:140}); }catch(e){} });
+  render();
+})();
+</script>
+</body>
+</html>
