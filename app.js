@@ -4,6 +4,8 @@
 
   // ---------- Confetti (canvas, brand colors) ----------
   window.fireConfetti = function(opts){
+    // Reduced-motion safe: celebration is delight, never a barrier or a trick.
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     opts = opts || {};
     var count = opts.count || 160;
     var canvas = document.getElementById('confetti-canvas');
