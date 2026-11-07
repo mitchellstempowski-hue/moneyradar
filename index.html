@@ -5,9 +5,103 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Money Radar — We Find the Money Companies Owe You</title>
 <meta name="description" content="Money Radar matches you against open class-action settlements, warns you at 14, 7, and 2 days before deadlines, and helps you file. Free weekly email. Pro: $15/mo or $79/yr. Filing is always free on the official site.">
+<link rel="canonical" href="https://getmoneyradar.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Money Radar">
+<meta property="og:title" content="Money Radar — We Find the Money Companies Owe You">
+<meta property="og:description" content="Money Radar matches you against open class-action settlements, warns you at 14, 7, and 2 days before deadlines, and helps you file. Free weekly email. Pro: $15/mo or $79/yr. Filing is always free on the official site.">
+<meta property="og:url" content="https://getmoneyradar.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Money Radar — We Find the Money Companies Owe You">
+<meta name="twitter:description" content="Money Radar matches you against open class-action settlements, warns you at 14, 7, and 2 days before deadlines, and helps you file. Free weekly email. Pro: $15/mo or $79/yr. Filing is always free on the official site.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://getmoneyradar.com/#org",
+   "name": "Money Radar",
+   "legalName": "MS ECOM LLC",
+   "url": "https://getmoneyradar.com/",
+   "email": "mitchell@msecomllc.com",
+   "telephone": "+1-586-203-9434",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Troy",
+    "addressRegion": "MI",
+    "addressCountry": "US"
+   },
+   "description": "Money Radar matches people against open class-action settlements, warns them 14, 7, and 2 days before claim deadlines, helps them file, and tracks payouts. Filing a claim is always free on the official settlement site; membership pays for matching, alerts, pre-fill help, and tracking."
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://getmoneyradar.com/#site",
+   "url": "https://getmoneyradar.com/",
+   "name": "Money Radar",
+   "publisher": {
+    "@id": "https://getmoneyradar.com/#org"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Is filing a settlement claim really free?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes — always. Every official settlement site lets you file at no cost, and no legitimate administrator charges a fee or asks for your bank login. Money Radar charges for matching, alerts, pre-fill help, and tracking — the work around the claim, never the claim itself."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much will I actually get?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It varies and nobody honest can promise a number. Typical no-proof claims pay anywhere from a few dollars to a few hundred, depending on the fund and how many people file. Payments usually arrive months after the deadline, once the court gives final approval. Anyone who guarantees you a specific amount is lying to you."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why not just search for settlements myself?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can — the information is public. People pay us for the same reason they pay for any radar: hundreds of settlements open and close every year, most people qualify for a handful, and the median claims rate is only about 9% because people never hear about the ones that match them. We watch all of them so you only see yours."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What does the eligibility profile do with my answers?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Your answers match you to settlements (used GoodRx? bought an iPhone 16?) and filter out the ones that can't be yours. We don't sell your profile. It's used to send you your matches and alerts — that's the whole deal."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can you file my claims for me?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes — that's the Done-For-You Pack: a flat $39, never a percentage. For unclaimed-property money held by states, we're alert-only by design: we'll point you to your state's official free claim page, because state “finder” laws heavily regulate anyone who files that kind of claim for a fee."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I cancel Pro?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Online, in your account, in about two clicks — no calls, no chat-with-support gauntlet. We also email you before any annual renewal. A subscription you can't leave isn't a business, it's a trap, and we don't run one."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
@@ -183,7 +277,7 @@
     <form class="grid" id="signup-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="0df91239-bbf8-4d91-a840-ad835f7f3ab9">
       <input type="hidden" name="subject" value="Money Radar — New signup">
-      <input type="hidden" name="redirect" value="https://mitchellstempowski-hue.github.io/moneyradar/thanks.html">
+      <input type="hidden" name="redirect" value="https://getmoneyradar.com/thanks.html">
       <label>Your name
         <input type="text" name="name" required placeholder="Jane Doe" autocomplete="name">
       </label>
@@ -218,5 +312,13 @@
     });
   });
 </script>
+
+  <div class="flyout" id="exitFlyout" hidden role="dialog" aria-label="Free settlement match check">
+    <button class="flyout-x" id="exitFlyoutClose" aria-label="Close">✕</button>
+    <div class="flyout-kicker">Before you go — 2 minutes, free</div>
+    <div class="flyout-title">See which of the 8 open settlements actually match you</div>
+    <p class="flyout-body">Most people qualify for a handful and never hear about them — the median claims rate is only about 9%. The check is free, and filing is always free at the official site.</p>
+    <a class="btn" href="quiz.html">Check my matches — free</a>
+  </div>
 </body>
 </html>

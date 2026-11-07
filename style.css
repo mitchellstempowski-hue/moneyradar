@@ -120,3 +120,10 @@ footer.site a{color:var(--muted)}
   .signup{padding:26px 20px}
   .quiz-box{padding:24px 18px}
 }
+
+.flyout{position:fixed;right:18px;bottom:18px;z-index:60;max-width:360px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 18px 50px rgba(2,6,16,.55)}
+.flyout-kicker{color:var(--gold);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.flyout-title{font-size:20px;font-weight:900;line-height:1.25;margin-bottom:8px}
+.flyout-body{color:var(--muted);font-size:14px;margin-bottom:14px}
+.flyout-x{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--muted);font-size:16px;cursor:pointer}
+@media (max-width:560px){.flyout{left:12px;right:12px;bottom:12px;max-width:none}}

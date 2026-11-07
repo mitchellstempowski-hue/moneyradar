@@ -98,3 +98,15 @@
     });
   }
 })();
+
+  /* Offer-led exit flyout (Web Excellence: capture on every template).
+     Shows once per session: on exit intent (desktop) or after 50s + deep scroll. */
+  var fly = document.getElementById('exitFlyout');
+  if (fly && !sessionStorage.getItem('mr_exit_shown')) {
+    var shown = false;
+    function showFly(){ if (shown) return; shown = true; fly.hidden = false; sessionStorage.setItem('mr_exit_shown','1'); }
+    document.addEventListener('mouseout', function(e){ if (!e.relatedTarget && e.clientY < 8) showFly(); });
+    setTimeout(function(){ if (window.scrollY > document.body.scrollHeight * 0.45) showFly(); }, 50000);
+    var fc = document.getElementById('exitFlyoutClose');
+    if (fc) fc.addEventListener('click', function(){ fly.hidden = true; });
+  }

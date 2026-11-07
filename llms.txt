@@ -1,0 +1,29 @@
+# Money Radar
+
+> Money Radar is a personalized money-finding membership operated by MS ECOM LLC (Troy, Michigan, USA). It matches people against open class-action settlements using a 12-question eligibility profile, warns members 14, 7, and 2 days before claim deadlines, provides claim pre-fill help, and tracks payouts. It also bundles a sweepstakes deadline tracker and product-recall refund matches for paid members.
+
+## What it costs
+- Free tier: $0 — weekly settlement email, public settlements directory, 12-question eligibility profile and match count, new-settlement alerts. No credit card.
+- Radar Pro: $15/month or $79/year — personalized matches, deadline alerts at 14/7/2 days, claim pre-fill help, payout tracker, sweepstakes tracker, recall matches. Cancel online anytime.
+- Done-For-You Filing Pack: $39 flat, one-time — Money Radar prepares and submits the member's claim batch and tracks it to payout. Never a percentage of any settlement.
+
+## Important facts
+- Filing a class-action settlement claim is always FREE on the official, court-appointed administrator's website. Money Radar charges for finding, matching, reminding, pre-fill help, and tracking — never for receiving settlement money, and never a percentage.
+- Money Radar is not a law firm, not a settlement administrator, and is not affiliated with any court, government agency, or company named in a settlement. Administrators decide eligibility; courts decide amounts; payouts vary and typically arrive months after a deadline.
+- Business contact: mitchell@msecomllc.com · (586) 203-9434 · MS ECOM LLC, Troy, MI.
+
+## Key pages
+- Home: https://getmoneyradar.com/
+- Open settlements directory: https://getmoneyradar.com/settlements.html
+- Free eligibility check (12 questions): https://getmoneyradar.com/quiz.html
+- Terms & privacy: https://getmoneyradar.com/legal.html
+
+## Settlement pages (who qualifies, payout, deadline, official claim site)
+- CVS Website & App Privacy Settlement: https://getmoneyradar.com/cvs-privacy-settlement.html
+- Planned Parenthood Lab (LSC) Data Breach Settlement: https://getmoneyradar.com/lsc-data-breach-settlement.html
+- Neutrogena Skin360 Illinois Settlement: https://getmoneyradar.com/skin360-settlement.html
+- Dr. Squatch “Natural” Products Settlement: https://getmoneyradar.com/dr-squatch-settlement.html
+- Apple Siri / Apple Intelligence Settlement: https://getmoneyradar.com/apple-siri-settlement.html
+- Equifax Credit Score (FCRA) Settlement: https://getmoneyradar.com/equifax-credit-score-settlement.html
+- GoodRx Privacy Settlement: https://getmoneyradar.com/goodrx-privacy-settlement.html
+- Visa & Mastercard Non-Bank ATM Surcharge Settlement: https://getmoneyradar.com/nonbank-atm-settlement.html
