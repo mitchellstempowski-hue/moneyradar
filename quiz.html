@@ -52,6 +52,12 @@
       <div id="no-match" style="display:none">
         <p class="center" style="color:var(--muted)">No direct matches in today's list — which is exactly why the Radar matters. New settlements open every week, and your profile is now on watch. Join free and we'll email you the moment a settlement matches you.</p>
       </div>
+      <div id="dfy-hero" class="card" style="display:none;margin-top:22px;text-align:left">
+        <h3>💸 You just found money. Want us to file it for you?</h3>
+        <p>Every match above is a real, open settlement — and you can file each one <b>free</b> on its official site. Or hand it off: the <b>Done-For-You Pack ($39 flat, never a percentage)</b> — we prepare and submit your claim batch for you and track it to payout.</p>
+        <a class="btn gold" href="https://whop.com/msecomllc/done-for-you-filing-pack" target="_blank" rel="noopener">File my claims for me — $39 flat</a>
+        <p class="fineprint" style="margin-top:10px">Filing yourself is always free — the Pack is for people who'd rather not deal with forms. Afterwards, Radar Pro ($15/mo) is the add-on that keeps watch for the <i>next</i> settlement so you never have to go hunting again.</p>
+      </div>
       <form class="grid" id="quiz-signup" action="https://api.web3forms.com/submit" method="POST" style="margin-top:22px">
         <input type="hidden" name="access_key" value="0df91239-bbf8-4d91-a840-ad835f7f3ab9">
         <input type="hidden" name="subject" value="Money Radar — Quiz signup with matches">
@@ -170,6 +176,7 @@
       list.appendChild(div);
     });
     if(target === 0) document.getElementById('no-match').style.display = "block";
+    if(target > 0) document.getElementById('dfy-hero').style.display = "block";
     document.getElementById('quiz-matches-field').value = keys.map(function(k){ return matches[k].name; }).join("; ");
     document.getElementById('quiz-answers-field').value = JSON.stringify(answers);
     try{ localStorage.setItem('moneyradar_profile', JSON.stringify({answers:answers, matches:keys, state:userState, ts:Date.now()})); }catch(e){}
