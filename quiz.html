@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Check My Matches — 12-Question Eligibility Check | Money Radar</title>
-<meta name="description" content="Answer 12 quick questions and Money Radar matches you against every open settlement we track. Free, about 60 seconds.">
+<title>Check My Matches — 15-Question Eligibility Check | Money Radar</title>
+<meta name="description" content="Answer 15 quick questions and Money Radar matches you against every open settlement we track. Free, about 60 seconds.">
 <link rel="canonical" href="https://getmoneyradar.com/quiz.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Money Radar">
-<meta property="og:title" content="Check My Matches — 12-Question Eligibility Check | Money Radar">
-<meta property="og:description" content="Answer 12 quick questions and Money Radar matches you against every open settlement we track. Free, about 60 seconds.">
+<meta property="og:title" content="Check My Matches — 15-Question Eligibility Check | Money Radar">
+<meta property="og:description" content="Answer 15 quick questions and Money Radar matches you against every open settlement we track. Free, about 60 seconds.">
 <meta property="og:url" content="https://getmoneyradar.com/quiz.html">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Check My Matches — 12-Question Eligibility Check | Money Radar">
-<meta name="twitter:description" content="Answer 12 quick questions and Money Radar matches you against every open settlement we track. Free, about 60 seconds.">
+<meta name="twitter:title" content="Check My Matches — 15-Question Eligibility Check | Money Radar">
+<meta name="twitter:description" content="Answer 15 quick questions and Money Radar matches you against every open settlement we track. Free, about 60 seconds.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -31,9 +31,9 @@
 <section style="padding-top:44px">
   <div class="wrap">
     <div class="quiz-box" id="quiz-box">
-      <p class="fineprint" style="margin-bottom:14px">✓ <b style="color:var(--green)">2 of your checks are already done</b> — this week's settlement scan is current, and every live deadline is loaded in the tracker. That's your head start; these 12 questions finish the profile.</p>
+      <p class="fineprint" style="margin-bottom:14px">✓ <b style="color:var(--green)">2 of your checks are already done</b> — this week's settlement scan is current, and every live deadline is loaded in the tracker. That's your head start; these 15 questions finish the profile.</p>
       <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-        <span class="badge proof" id="step-label">Question 1 of 12</span>
+        <span class="badge proof" id="step-label">Question 1 of 15</span>
         <span class="badge days" id="match-label">Radar warming up…</span>
       </div>
       <div style="height:12px"></div>
@@ -88,8 +88,11 @@
     skin360:  {name:"Neutrogena Skin360 (Illinois)", fund:"$4.7M fund", deadline:"2026-11-25", dl:"Nov 25, 2026", url:"https://skin360bipasettlement.com/"},
     squatch:  {name:"Dr. Squatch “Natural” Products", fund:"$9M fund", deadline:"2026-11-27", dl:"Nov 27, 2026", url:"https://personalcareproductssettlement.com/"},
     apple:    {name:"Apple Siri / Apple Intelligence", fund:"$250M fund", deadline:"2026-12-21", dl:"Dec 21, 2026", url:"https://www.smartphoneaisettlement.com/"},
+    kroger:   {name:"Kroger Prescription Pricing", fund:"$17M fund", deadline:"2026-12-21", dl:"Dec 21, 2026", url:"https://krogersavingsclubsettlement.com/"},
     equifax:  {name:"Equifax Credit Score (FCRA)", fund:"$100M fund", deadline:"2026-12-28", dl:"Dec 28, 2026", url:"https://equifaxfaircreditreportingsettlement.com/"},
     goodrx:   {name:"GoodRx Privacy", fund:"$32M fund", deadline:"2026-12-29", dl:"Dec 29, 2026", url:"https://www.goodrxprivacysettlement.com/"},
+    davita:   {name:"DaVita Ransomware", fund:"$10M fund", deadline:"2027-01-19", dl:"Jan 19, 2027", url:"https://dvacyberattacksettlement.com/"},
+    columbia: {name:"Columbia University Data Breach", fund:"$16.1M fund", deadline:"2027-01-21", dl:"Jan 21, 2027", url:"https://columbiauniversitydatasettlement.com/"},
     atm:      {name:"Visa & Mastercard Non-Bank ATM Fees", fund:"$167.5M fund", deadline:"2027-02-10", dl:"Feb 10, 2027", url:"https://www.nonbankatmsurchargesettlement.com/"}
   };
   var QUESTIONS = [
@@ -101,6 +104,9 @@
     {q:"Have you had a lab test ordered by a Planned Parenthood health center, or received a data-breach notice from Laboratory Services Cooperative (LSC)?", sub:"The incident came to light around October 2024.", match:"lsc"},
     {q:"While in Illinois between 2019 and 2023, did you use the Neutrogena or NeoStrata Skin360 skin-scanning app or website?", sub:"Illinois' biometric privacy law is the basis of this one.", match:"skin360", stateGate:"IL"},
     {q:"Have you received a notice from Equifax about a credit score error, or believe your Equifax score was misreported to a lender?", sub:"Membership in this class comes from Equifax's own records.", match:"equifax"},
+    {q:"Have you paid for a prescription at a Kroger pharmacy using insurance at any point since December 2018?", sub:"The case is about how insured prescription prices were reported and charged.", match:"kroger"},
+    {q:"Did you receive a notice about the DaVita cyberattack (April 2025) saying your information may have been accessed?", sub:"DaVita is a kidney-care and dialysis provider hit by a ransomware attack.", match:"davita"},
+    {q:"Did you receive a notice that your information was involved in the Columbia University data breach (around May 2025)?", sub:"You'd need the Notice ID from that notice to file — hold on to it if you got one.", match:"columbia"},
     {q:"Which state do you live in?", sub:"Some settlements are state-specific. This helps us filter your matches.", state:true},
     {q:"Do you enter sweepstakes or giveaways online?", sub:"Pro members get a sweepstakes deadline tracker bundled in — never miss a closing date.", bundle:"sweeps"},
     {q:"Do you want alerts when a product you own is recalled for a refund?", sub:"Refunds were the remedy in over half of recent CPSC recalls — most people never claim them.", bundle:"recalls"},
@@ -115,7 +121,7 @@
   function matchCount(){ return Object.keys(matches).length; }
   function render(){
     var item = QUESTIONS[idx];
-    stepEl.textContent = "Question " + (idx+1) + " of 12";
+    stepEl.textContent = "Question " + (idx+1) + " of " + QUESTIONS.length;
     // Endowed progress: the bar starts at 8% and the first answer lands ~16%
     fillEl.style.width = Math.round(8 + (idx/QUESTIONS.length)*84) + "%";
     var mc = matchCount();

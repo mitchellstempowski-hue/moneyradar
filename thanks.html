@@ -37,8 +37,8 @@
     <p class="fineprint" style="margin-top:8px" id="thanks-fill-label">Radar setup: 40% complete</p>
     <div class="match-list" style="text-align:left;margin-top:26px">
       <div class="match-item"><div><b>✅ Step 1 — You're in</b><span>Your free weekly settlement email starts with the next scan.</span></div></div>
-      <div class="match-item"><div><b>🎯 Step 2 — Sharpen your matches (2 minutes)</b><span>Take the 12-question eligibility check so we only send settlements that are plausibly yours.</span></div><a class="btn small" href="quiz.html">Start →</a></div>
-      <div class="match-item"><div><b>💸 Step 3 — File what's already open</b><span>Eight settlements are open right now. The soonest deadline is November 16 — check the directory today. Rather not deal with the forms? The Done-For-You Pack files your claims for you — $39 flat, never a percentage.</span></div><a class="btn small ghost" href="settlements.html">View →</a></div>
+      <div class="match-item"><div><b>🎯 Step 2 — Sharpen your matches (2 minutes)</b><span>Take the 15-question eligibility check so we only send settlements that are plausibly yours.</span></div><a class="btn small" href="quiz.html">Start →</a></div>
+      <div class="match-item"><div><b>💸 Step 3 — File what's already open</b><span>Eleven settlements are open right now. The soonest deadline is November 16 — check the directory today. Rather not deal with the forms? The Done-For-You Pack files your claims for you — $39 flat, never a percentage.</span></div><a class="btn small ghost" href="settlements.html">View →</a></div>
     </div>
     <div class="card" style="margin-top:22px;text-align:left">
       <h3>Know someone who never checks this stuff? (Almost everyone.)</h3>
@@ -61,7 +61,7 @@
     setTimeout(function(){ fill.style.width = '40%'; }, 400);
   });
   document.getElementById('copy-share').addEventListener('click', function(){
-    var msg = "I just joined Money Radar — it matches you against class-action settlements companies owe you money from and warns you before the deadlines. There are 8 open right now ($589M+ in funds). The check takes 60 seconds and it's free: " + window.location.origin + window.location.pathname.replace('thanks.html','quiz.html');
+    var msg = "I just joined Money Radar — it matches you against class-action settlements companies owe you money from and warns you before the deadlines. There are 11 open right now ($633M+ in funds). The check takes 60 seconds and it's free: " + window.location.origin + window.location.pathname.replace('thanks.html','quiz.html');
     var status = document.getElementById('copy-status');
     if(navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(msg).then(function(){ status.textContent = "Copied! Paste it anywhere to invite a friend."; try{ window.fireConfetti({count:80}); }catch(e){} });

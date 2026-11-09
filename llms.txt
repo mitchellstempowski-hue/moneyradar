@@ -1,9 +1,9 @@
 # Money Radar
 
-> Money Radar is a personalized money-finding membership operated by MS ECOM LLC (Troy, Michigan, USA). It matches people against open class-action settlements using a 12-question eligibility profile, warns members 14, 7, and 2 days before claim deadlines, provides claim pre-fill help, and tracks payouts. It also bundles a sweepstakes deadline tracker and product-recall refund matches for paid members.
+> Money Radar is a personalized money-finding membership operated by MS ECOM LLC (Troy, Michigan, USA). It matches people against open class-action settlements using a 15-question eligibility profile, warns members 14, 7, and 2 days before claim deadlines, provides claim pre-fill help, and tracks payouts. It also bundles a sweepstakes deadline tracker and product-recall refund matches for paid members.
 
 ## What it costs
-- Free tier: $0 — weekly settlement email, public settlements directory, 12-question eligibility profile and match count, new-settlement alerts. No credit card.
+- Free tier: $0 — weekly settlement email, public settlements directory, 15-question eligibility profile and match count, new-settlement alerts. No credit card.
 - Radar Pro: $15/month or $79/year — personalized matches, deadline alerts at 14/7/2 days, claim pre-fill help, payout tracker, sweepstakes tracker, recall matches. Cancel online anytime.
 - Done-For-You Filing Pack: $39 flat, one-time — Money Radar prepares and submits the member's claim batch and tracks it to payout. Never a percentage of any settlement.
 
@@ -15,7 +15,7 @@
 ## Key pages
 - Home: https://getmoneyradar.com/
 - Open settlements directory: https://getmoneyradar.com/settlements.html
-- Free eligibility check (12 questions): https://getmoneyradar.com/quiz.html
+- Free eligibility check (15 questions): https://getmoneyradar.com/quiz.html
 - Terms & privacy: https://getmoneyradar.com/legal.html
 
 ## Settlement pages (who qualifies, payout, deadline, official claim site)
@@ -24,6 +24,9 @@
 - Neutrogena Skin360 Illinois Settlement: https://getmoneyradar.com/skin360-settlement.html
 - Dr. Squatch “Natural” Products Settlement: https://getmoneyradar.com/dr-squatch-settlement.html
 - Apple Siri / Apple Intelligence Settlement: https://getmoneyradar.com/apple-siri-settlement.html
+- Kroger Prescription Pricing Settlement: https://getmoneyradar.com/kroger-prescription-settlement.html
 - Equifax Credit Score (FCRA) Settlement: https://getmoneyradar.com/equifax-credit-score-settlement.html
 - GoodRx Privacy Settlement: https://getmoneyradar.com/goodrx-privacy-settlement.html
+- DaVita Ransomware Settlement: https://getmoneyradar.com/davita-ransomware-settlement.html
+- Columbia University Data Breach Settlement: https://getmoneyradar.com/columbia-university-data-breach-settlement.html
 - Visa & Mastercard Non-Bank ATM Surcharge Settlement: https://getmoneyradar.com/nonbank-atm-settlement.html
