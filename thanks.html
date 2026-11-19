@@ -62,7 +62,7 @@
     setTimeout(function(){ fill.style.width = '40%'; }, 400);
   });
   document.getElementById('copy-share').addEventListener('click', function(){
-    var msg = "I just joined Money Radar — it matches you against class-action settlements companies owe you money from and warns you before the deadlines. There are 15 open right now ($1,394M+ in funds). The check takes 60 seconds and it's free: " + window.location.origin + window.location.pathname.replace('thanks.html','quiz.html');
+    var msg = "I just joined Money Radar — it matches you against class-action settlements companies owe you money from and warns you before the deadlines. There are 14 open right now ($1,373M+ in funds). The check takes 60 seconds and it's free: " + window.location.origin + window.location.pathname.replace('thanks.html','quiz.html');
     var status = document.getElementById('copy-status');
     if(navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(msg).then(function(){ status.textContent = "Copied! Paste it anywhere to invite a friend."; try{ window.fireConfetti({count:80}); }catch(e){} });

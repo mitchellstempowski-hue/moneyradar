@@ -161,9 +161,10 @@
       b.addEventListener('click', function(){
         answers["q"+(idx+1)] = pair[0];
         if(item.match && (pair[0]==="yes" || pair[0]==="notsure")){
-          if(!(item.stateGate && userState && userState !== item.stateGate)){
-            if(pair[0]==="yes") matches[item.match] = SETTLEMENTS[item.match];
-            else matches[item.match] = SETTLEMENTS[item.match]; // "not sure" still flags it as a possible match to check
+          var s0 = SETTLEMENTS[item.match];
+          var live0 = s0 && (new Date(s0.deadline+"T23:59:59") >= new Date());
+          if(live0 && !(item.stateGate && userState && userState !== item.stateGate)){
+            matches[item.match] = s0; // yes and "not sure" both flag a possible match; expired settlements never match
           }
         }
         next();
