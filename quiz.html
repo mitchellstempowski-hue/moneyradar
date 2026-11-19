@@ -181,8 +181,8 @@
     var countEl = document.getElementById('match-count');
     // Animated count-up + confetti celebration
     var n = 0; var target = keys.length;
-    var iv = setInterval(function(){ n++; countEl.textContent = n; if(n >= target) clearInterval(iv); }, target ? 220 : 0);
-    if(target === 0) countEl.textContent = "0";
+    countEl.textContent = "0";
+    if(target > 0){ var iv = setInterval(function(){ n++; countEl.textContent = n; if(n >= target) clearInterval(iv); }, 220); }
     var list = document.getElementById('match-list'); list.innerHTML = "";
     keys.forEach(function(k){
       var s = matches[k];
